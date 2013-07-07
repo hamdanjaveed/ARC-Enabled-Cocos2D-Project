@@ -936,6 +936,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC35BC01786082300589F22 /* Build configuration list for PBXNativeTarget "ARC Enabled Cocos2D Project" */;
 			buildPhases = (
+				ACBBA6A1178909F4001241C5 /* ShellScript */,
 				ACC35A091786082100589F22 /* Sources */,
 				ACC35A0A1786082100589F22 /* Frameworks */,
 				ACC35A0B1786082100589F22 /* Resources */,
@@ -1013,6 +1014,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACBBA6A1178909F4001241C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACC35A091786082100589F22 /* Sources */ = {
@@ -1305,6 +1322,7 @@
 				ACC35BC21786082300589F22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACC35BD01786086E00589F22 /* Build configuration list for PBXNativeTarget "Cocos2D Library" */ = {
 			isa = XCConfigurationList;
@@ -1313,6 +1331,7 @@
 				ACC35BD21786086E00589F22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
